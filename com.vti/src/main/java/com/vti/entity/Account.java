@@ -35,7 +35,7 @@ public class Account {
 
     @Column(name = "`role`", nullable = false)
     @Enumerated(EnumType.STRING)
-    private String role;
+    private String role = "STUDENT";
 
     @Column(name = "phone_number", length = 12, nullable = false)
     private String phoneNumber;
@@ -49,5 +49,7 @@ public class Account {
     @Column(name = "information", length = 255, nullable = false)
     private String information;
 
+    @ManyToOne
+    @JoinColumn(name = "class_id")
     private Class class_id;
 }

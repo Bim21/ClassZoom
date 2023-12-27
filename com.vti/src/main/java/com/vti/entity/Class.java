@@ -35,13 +35,16 @@ public class Class {
     @Enumerated(EnumType.STRING)
     private TeachingForm teachingForm;
 
-    @Column(name = "mentor_id", nullable = false)
-    private int mentorId;
+    @ManyToOne
+    @JoinColumn(name = "mentor_id")
+    private Account mentorId;
 
-    @Column(name = "zoom_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "zoom_id")
     private Zoom zoomId;
 
-    @Column(name = "class_room_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "class_zoom_id")
     private ClassRoom classZoomId;
 
     @Column(name = "`description`", length = 255, nullable = false)

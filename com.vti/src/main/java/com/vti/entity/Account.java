@@ -35,7 +35,7 @@ public class Account {
 
     @Column(name = "`role`", nullable = false)
     @Enumerated(EnumType.STRING)
-    private String role = "STUDENT";
+    private Role role = Role.STUDENT;
 
     @Column(name = "phone_number", length = 12, nullable = false)
     private String phoneNumber;
